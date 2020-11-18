@@ -7,6 +7,7 @@ import MyPage from './pages/MyPage';
 import PostPage from './pages/PostPage';
 import UnderBarContainer from './containers/Main/UnderBarContainer';
 
+
 const App = () => {
     return(
         <Router>

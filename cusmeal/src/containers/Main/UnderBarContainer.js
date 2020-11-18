@@ -29,14 +29,15 @@ const UnderBarContainer = ({match, history, location}) => {
         history.push('/my');
     }
 
+
     return(
-        <>
+        <>  
             <UnderBarComponent 
                 HandleMain={onHandleMainClick} 
                 HandleCommunity={onHandleCommunityClick} 
                 HandleCart={onHandleCartClick} 
                 HandleMy={onHandleMyClick} 
-                value={value}
+                pathname={location.pathname}
             />
         </>
     );

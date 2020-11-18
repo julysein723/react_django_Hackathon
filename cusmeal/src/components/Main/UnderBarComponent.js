@@ -19,13 +19,14 @@ const BarWrap = style.nav`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0vw 0vw 7vw 0 rgba(0, 0, 0, 0.3);
 `;
 
 const BarMenu = style.img`
     width: 7vw;
     height: 7vw;
     display:${props=>(
-        (props.isClick == props.id)? 
+        (props.pathname == props.id)? 
             ((props.isHover==true)? 'box': 'none') : 
             ((props.isHover==true)? 'none' : 'box') 
 
@@ -33,18 +34,18 @@ const BarMenu = style.img`
 `;
 
 
-const UnderBarComponent = ({HandleMain, HandleCommunity, HandleCart, HandleMy, value}) => {
+const UnderBarComponent = ({HandleMain, HandleCommunity, HandleCart, HandleMy, pathname}) => {
     return(
         <>
             <BarWrap>
-                <BarMenu src={home} onClick={HandleMain} isClick={value} id={0} isHover={false}/>
-                <BarMenu src={home_hover} onClick={HandleMain} isClick={value} id={0} isHover={true}/>
-                <BarMenu src={conversation} onClick={HandleCommunity} isClick={value} id={1} isHover={false}/>
-                <BarMenu src={conversation_hover} onClick={HandleCommunity} isClick={value} id={1} isHover={true}/>
-                <BarMenu src={shopping_cart} onClick={HandleCart} isClick={value} id={2} isHover={false}/>
-                <BarMenu src={shopping_cart_hover} onClick={HandleCart} isClick={value} id={2} isHover={true}/>
-                <BarMenu src={user} onClick={HandleMy} isClick={value} id={3} isHover={false}/>
-                <BarMenu src={user_hover} onClick={HandleMy} isClick={value} id={3} isHover={true}/>
+                <BarMenu src={home} pathname={pathname} onClick={HandleMain} id={'/main'} isHover={false}/>
+                <BarMenu src={home_hover} pathname={pathname} onClick={HandleMain} id={'/main'} isHover={true}/>
+                <BarMenu src={conversation} pathname={pathname} onClick={HandleCommunity} id={'/community'} isHover={false}/>
+                <BarMenu src={conversation_hover} pathname={pathname} onClick={HandleCommunity} id={'/community'} isHover={true}/>
+                <BarMenu src={shopping_cart} pathname={pathname} onClick={HandleCart} id={'/cart'} isHover={false}/>
+                <BarMenu src={shopping_cart_hover} pathname={pathname} onClick={HandleCart} id={'/cart'} isHover={true}/>
+                <BarMenu src={user} pathname={pathname} onClick={HandleMy} id={'/my'} isHover={false}/>
+                <BarMenu src={user_hover} pathname={pathname} onClick={HandleMy} id={'/my'} isHover={true}/>
             </BarWrap>
         </>
     );
