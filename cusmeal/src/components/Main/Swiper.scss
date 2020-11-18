@@ -1,0 +1,15 @@
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
+    position: absolute;
+    width: 20vw;
+    margin-left: 70vw; 
+}
+
+.swiper-pagination-bullet{
+    background: white ;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active{
+    background: white !important;
+    opacity: 1;
+}
