@@ -3,12 +3,13 @@ import MiddleMenuContainer from '../../containers/Main/MiddleMenuConstainer';
 import UnderBarContainer from '../../containers/Main/UnderBarContainer';
 import PostListContainer from '../../containers/Main/PostListContainer';
 
-const MealPage = () => {
+const MealPage = ({history, location}) => {
     return(
         <div>
             <HeaderContainer />
             <MiddleMenuContainer />
-            <PostListContainer />
+            <PostListContainer history={history}/>
+            <UnderBarContainer history={history} location={location}/>
         </div>
     );
 }

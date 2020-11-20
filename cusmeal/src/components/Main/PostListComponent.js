@@ -10,8 +10,8 @@ import './Swiper.scss';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Mousewheel]);
 
 const Wrap = style.div`
-    position:fixed;
-    top: 40vw;
+    position: absolute;
+    top: 70vw;
     z-index: -1;
     width: 100vw;
     height: 100vh;
@@ -22,22 +22,25 @@ const Wrap = style.div`
 `;
 
 const ImgSliderWrap = style.div`
-    width: 90vw;
-    height: 20vw;
+    width: 100vw;
+    height: 25vw;
     position: fixed;
-    top: 43vw;
-    background-color: red;
+    top: 40vw;
+    padding: 3vw 0;
+    padding-left: 5vw;
+    background-color: rgba(248, 246, 250, 1);
+
 `;
 
 const PostsWrap = style.div`
-    overflow: hidden;
     width: 100vw;
     height: 150vw;
-    position: fixed;
-    top: 66vw;
-    display:flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
     align-items: center;
-
+    justify-items: center;
+    margin-top: 5vw;
 `;
 
 const PostList = style.div`
@@ -54,36 +57,21 @@ const Space = style.div`
     height: 3vw; 
 `;
 
-const PostListComponent = () => {
+const PostListComponent = ({history}) => {
     return(
         <>
-            <Wrap>
+            <ImgSliderWrap>
                 <Space />
                 <ImgSliderContainer />
+            </ImgSliderWrap>
+            <Wrap>
                 <PostsWrap>
-                    <Swiper
-                        spaceBetween={0}
-                        slidesPerview={'auto'}
-                        scrollbar={{ el: '.swiper-scrollbar', }}
-                        mousewheel={true}
-                        direction={'vertical'}
-                        freeMode={true}
-                    >
-                        <SwiperSlide>
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                            <PostContainer />
-                        </SwiperSlide>
-                    </Swiper>
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
                 </PostsWrap>
             </Wrap>
         </>

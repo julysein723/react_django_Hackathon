@@ -38,26 +38,28 @@ const PostDetail = style.div`
 
 const PostSign = style.div`
     font-size: 0.55rem;
+    font-weight: 700;
     color: rgba(249, 210, 86, 1);
 `;
 
 const PostPrice = style.div`
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 900;
     color: rgba(48, 119, 86, 1);
     margin-top: 12vw;
     position: absolute;
     right: 10%;
+    font-family: 'Noto Sans KR';
 `;
 
 const str1 = '오징어 불짬뽕';
 const str2 = '맛있게 매운 해물가득 불짬뽕';
 const str3 = '9800원~';
 
-const PostComponent = ({value}) => {
+const PostComponent = ({value, onClick}) => {
     return(
         <>
-            <PostWrap>
+            <PostWrap onClick={onClick}>
                 <PostImg src={foodImg}/>
                 <PostDetailWrap>
                     <PostName>{str1}</PostName>

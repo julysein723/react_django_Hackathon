@@ -4,7 +4,7 @@ import GradPage from './GradPage';
 import ToolPage from './ToolPage';
 import {useSelector} from 'react-redux';
 
-const MainPage = () => {
+const MainPage = ({history, location}) => {
     const {value} = useSelector(state => ({
         value: state.MiddleMenuSelect.value,
     }));
@@ -13,19 +13,19 @@ const MainPage = () => {
         case 0:
             return(
                 <>
-                    <MealPage />
+                    <MealPage history={history} location={location}/>
                 </>
             );
         case 1:
             return(
                 <>
-                    <GradPage />
+                    <GradPage history={history} location={location}/>
                 </>
             );
         case 2:
             return(
                 <>
-                    <ToolPage />
+                    <ToolPage history={history} location={location}/>
                 </>
             );
         default:

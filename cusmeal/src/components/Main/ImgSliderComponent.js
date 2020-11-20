@@ -4,6 +4,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 's
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+//import img1 from '../../assets/img_slider'
 
 const SwiperWrap = style.div`
     width: 90vw;

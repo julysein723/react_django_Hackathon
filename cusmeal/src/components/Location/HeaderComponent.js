@@ -1,59 +1,44 @@
 import React, {useState} from 'react';
 import style from 'styled-components';
 import search from '../../assets/icon/search.svg';
-import downward from '../../assets/icon/downward.svg';
-
 
 const HeaderWrap = style.div`
     position: fixed;
     top: 0;
     width: 100vw;
-    height: 30vw;
+    height: 40vw;
     background-color: rgba(48, 119, 86, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0vw 2vw 7vw 0 rgba(0, 0, 0, 0.3);
+`;
+
+
+const TextWrap = style.div`
+    margin-top: 8vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-const MarketSelectWrap = style.div`
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
-
-const MarketForm = style.form`
-
-`;
-
-const MarketSelect = style.select`
-    width: auto;
-    border: none;
-    margin-top: 7vw;
-    padding-left: 2rem;
+const TextMarket = style.div`
+    color: rgba(249, 210, 86, 1);
     font-weight: bold;
     font-size: 1.2rem;
-    color: rgba(248, 246, 250, 1);
-    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
-    -moz-appearance: none; 
-    appearance: none;
-    background: url(${downward}) no-repeat 1% 50%;
-    background-size: 1.2rem 1.2rem;
-    &::-ms-expand { 
-        display: none; 
-    }
-    outline: none;
 `;
 
-const MarketOption = style.option`
+const TextDetail = style.div`
+    color: rgba(248, 246, 250, 1);
+    font-weight: bold;
     font-size: 0.8rem;
-    color: black;
 `;
+
 
 const SearchBarWrap = style.div`
 
 `;
+
 
 const SearchBar = style.input`
     -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
@@ -102,19 +87,14 @@ const HeaderComponent = () => {
     return(
         <>
             <HeaderWrap>
-                <MarketSelectWrap>
-                    <MarketForm>
-                        <MarketSelect>
-                            <MarketOption>망원시장</MarketOption>
-                            <MarketOption>석촌시장</MarketOption>
-                            <MarketOption>가락시장</MarketOption>
-                        </MarketSelect>
-                    </MarketForm>
-                </MarketSelectWrap>
+                <TextWrap>
+                    <TextMarket>내 시장 검색</TextMarket>
+                    <TextDetail>현위치에서 가까운 시장을 찾아보세요!</TextDetail>
+                </TextWrap>
                 <SearchBarWrap>
                     <SearchImg src={search}/>
                     <SearchBar 
-                        placeholder="먹고 싶은 밀키트 검색" 
+                        placeholder="마포구 서교동 339-23 101호" 
                         isFocus={isFocus} 
                         onFocus={onHandleFocus}
                         onBlur={onHandleBlur}

@@ -19,7 +19,7 @@ const BarWrap = style.nav`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0vw 0vw 7vw 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0vw 1vw 7vw 0 rgba(0, 0, 0, 0.3);
 `;
 
 const BarMenu = style.img`

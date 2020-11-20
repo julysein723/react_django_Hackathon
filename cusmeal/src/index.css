@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Sansita:ital,wght@1,400;1,700;1,800&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, '애플 SD 산돌고딕 Neo','Apple SD Gothic Neo', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont,'Sansita','Noto Sans KR', 'Apple SD Gothic', '애플 SD 산돌고딕 Neo','Apple SD Gothic Neo', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

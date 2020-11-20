@@ -11,7 +11,6 @@ import UnderBarContainer from './containers/Main/UnderBarContainer';
 const App = () => {
     return(
         <Router>
-            <Route component={UnderBarContainer} />
             <Switch>
                 <Route path='/' exact component={LocationPage}/>
                 <Route path='/main' exact component={MainPage}/>

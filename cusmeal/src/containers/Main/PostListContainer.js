@@ -1,9 +1,9 @@
 import PostListComponent from '../../components/Main/PostListComponent';
 
-const PostListContainer = () => {
+const PostListContainer = ({history}) => {
     return(
         <>
-            <PostListComponent />
+            <PostListComponent history={history}/>
         </>
     );
 }
