@@ -15,7 +15,7 @@ const HeaderWrap = style.div`
 `;
 
 
-const TextCart = style.div`
+const Text = style.div`
     color: rgba(249, 210, 86, 1);
     font-weight: bold;
     font-size: 1.2rem;
@@ -27,7 +27,7 @@ const HeaderComponent = () => {
     return(
         <>
             <HeaderWrap>
-                <TextCart>마이페이지</TextCart>
+                <Text>마이페이지</Text>
             </HeaderWrap>
         </>
     )
