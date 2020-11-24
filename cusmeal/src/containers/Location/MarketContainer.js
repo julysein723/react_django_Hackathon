@@ -1,7 +1,7 @@
 import MarketComponent from '../../components/Location/MarketComponent';
 
 
-const MarketContainer = ({history}) => {
+const MarketContainer = ({history, market}) => {
     const onHandleClick = (e) => {
         e.preventDefault();
         console.log(history);
@@ -10,7 +10,7 @@ const MarketContainer = ({history}) => {
 
     return(
         <>
-            <MarketComponent onClick={onHandleClick}/>
+            <MarketComponent onClick={onHandleClick} market={market}/>
         </>
     )
 }

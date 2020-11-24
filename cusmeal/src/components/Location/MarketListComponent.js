@@ -31,19 +31,19 @@ const Space = style.div`
 `;
 
 
-const MarketListComponent = ({history}) => {
+const MarketListComponent = ({history, markets}) => {
     return(
         <>
             <Wrap>
                 <ListWrap>
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
-                    <MarketContainer history={history} />
+                    {markets.map((market, i) => {
+                        return( 
+                        <MarketContainer 
+                            key={i} 
+                            history={history}
+                            market={market} 
+                        />)
+                    })}
                     <Space />
                 </ListWrap>
             </Wrap>
