@@ -79,7 +79,7 @@ const LoadingComponent = () => {
         <>
             <Wrap>
                 <LogoWrap>
-                    <LogoImg color={red} isFlex={isFlex}/>
+                    <LogoImg color={'red'} isFlex={isFlex}/>
                     <LogoText>커스밀</LogoText>
                 </LogoWrap>
             </Wrap>
