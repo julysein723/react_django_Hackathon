@@ -51,10 +51,10 @@ const Space = style.div`
 
 const SpaceTwo = style.div`
     width: 100vw;  
-    height: 15vw; 
+    height: 17vw; 
 `;
 
-const PostListComponent = ({history}) => {
+const PostListComponent = ({history, posts}) => {
     return(
         <>
             <ImgSliderWrap>
@@ -63,16 +63,15 @@ const PostListComponent = ({history}) => {
             </ImgSliderWrap>
             <Wrap>
                 <PostsWrap>
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
-                    <PostContainer history={history} />
+                    {posts.map((post, i) => {
+                        return(
+                            <PostContainer 
+                                key={i}
+                                post={post}
+                                history={history}
+                            />
+                        )
+                    })}
                     <SpaceTwo />
                 </PostsWrap>
             </Wrap>

@@ -45,8 +45,8 @@ const MarketComponent = ({onClick, market}) => {
             <MarketWrap onClick={onClick}>
                 <MarketDetailWrap>
                     <MarketName>{market.name}</MarketName>
-                    <MarketDetail>서울특별시 마포구</MarketDetail>
-                    <MarketDetail>포은로 6길 27</MarketDetail>
+                    <MarketDetail>{market.address}</MarketDetail>
+                    <MarketDetail>{market.address2}</MarketDetail>
                 </MarketDetailWrap>
                 <MarketImg src={market.photo}/>
             </MarketWrap>

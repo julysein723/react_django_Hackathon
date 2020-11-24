@@ -4,7 +4,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 's
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
-//import img1 from '../../assets/img_slider'
+import img1 from '../../assets/ad.jpg';
 
 const SwiperWrap = style.div`
     width: 90vw;
@@ -33,7 +33,7 @@ const ImgSliderComponent = () => {
                     loop={true}
                     autoplay={true}
                 >
-                    <SwiperSlide><Img color={'red'}/></SwiperSlide>
+                    <SwiperSlide><Img src={img1}/></SwiperSlide>
                     <SwiperSlide><Img color={'blue'}/></SwiperSlide>
                     <SwiperSlide><Img color={'green'}/></SwiperSlide>
                 </Swiper>

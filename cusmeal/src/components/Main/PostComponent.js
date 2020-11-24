@@ -40,6 +40,7 @@ const PostSign = style.div`
     font-size: 0.55rem;
     font-weight: 700;
     color: rgba(249, 210, 86, 1);
+    display: ${props => props.signiture ? 'block' : 'none'};
 `;
 
 const PostPrice = style.div`
@@ -56,17 +57,17 @@ const str1 = '오징어 불짬뽕';
 const str2 = '맛있게 매운 해물가득 불짬뽕';
 const str3 = '9800원~';
 
-const PostComponent = ({value, onClick}) => {
+const PostComponent = ({post, onClick}) => {
     return(
         <>
             <PostWrap onClick={onClick}>
-                <PostImg src={foodImg}/>
+                <PostImg src={post.photo}/>
                 <PostDetailWrap>
-                    <PostName>{str1}</PostName>
-                    <PostDetail>{str2}</PostDetail>
-                    <PostSign>signiture</PostSign>
+                    <PostName>{post.name}</PostName>
+                    <PostDetail>{post.detail}</PostDetail>
+                    <PostSign signiture={post.signiture}>signiture</PostSign>
                 </PostDetailWrap>
-                <PostPrice>{str3}</PostPrice>
+                <PostPrice>{post.price}</PostPrice>
             </PostWrap>
         </>
     );

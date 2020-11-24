@@ -1,6 +1,6 @@
 import PostComponent from '../../components/Main/PostComponent';
 
-const PostContainer = ({value, history}) => {
+const PostContainer = ({post, history}) => {
     const onHandleClick = (e) => {
         e.preventDefault();
         history.push('/main/post');
@@ -8,7 +8,7 @@ const PostContainer = ({value, history}) => {
     
     return(
         <>
-            <PostComponent value={value} history={history} onClick={onHandleClick}/>
+            <PostComponent post={post} onClick={onHandleClick}/>
         </>
     );
 }

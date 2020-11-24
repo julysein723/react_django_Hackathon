@@ -6,9 +6,9 @@ const MarketListContainer = ({history}) => {
     const [markets, setMarkets] = useState([]);
     useEffect(() => {
         async function get() {
-            const axiosPosts = await axios.get('http://127.0.0.1:8000/market/market');
-            console.log('통신 : ', axiosPosts);
-            const markets = axiosPosts;
+            const axiosMarkets = await axios.get('http://127.0.0.1:8000/market/market');
+            console.log('통신 : ', axiosMarkets);
+            const markets = axiosMarkets.data;
             setMarkets(markets);
         };
         get();
