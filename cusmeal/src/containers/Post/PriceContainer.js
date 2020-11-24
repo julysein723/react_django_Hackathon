@@ -2,10 +2,10 @@ import PriceComponent from '../../components/Post/PriceComponent';
 
 const price = 9800;
 
-const PriceContainer = () => {
+const PriceContainer = ({history}) => {
     return(
         <>  
-            <PriceComponent price={price}/>
+            <PriceComponent price={price} history={history}/>
         </>
     )
 }

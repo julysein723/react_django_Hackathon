@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 
 const initState = {
-    value: 1,
+    value: 0,
 };
 
 const CLICK_MINUS = "post/CLICK_MINUS";
@@ -19,11 +19,11 @@ const reducer = handleActions(
     {
       [CLICK_MINUS]: (state, {payload: {value}})=>({
         ...state,
-        value: value - 1,
+        value: value,
       }),
       [CLICK_PLUS]: (state, {payload: {value}})=>({
         ...state,
-        value: value + 1,
+        value: value,
       }),
     },
     initState

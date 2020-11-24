@@ -1,6 +1,7 @@
 import style from 'styled-components';
 import CustomContainer from '../../containers/Post/CustomContainer';
-
+import {useDispatch,useSelector} from 'react-redux';
+import {clickMinus, clickPlus} from '../../modules/CustomBtnClick';
 
 const Wrap = style.div`
     position:absolute;
@@ -56,7 +57,12 @@ const Space = style.div`
     height: 5vw; 
 `;
 
-const CustomListComponent = ({price}) => {
+const CustomListComponent = ({price, materials}) => {
+    const {post, value} = useSelector(state => ({
+        post: state.PostChange.post,
+        value: state.CustomBtnClick.value,
+    }))
+    
     return(
         <>
         <Wrap>
@@ -67,15 +73,17 @@ const CustomListComponent = ({price}) => {
                 </TextWrap>
             </PriceWrap>
             <ListWrap>
-                <CustomContainer />
-                <CustomContainer />
-                <CustomContainer />
-                <CustomContainer />
-                <CustomContainer />
-                <CustomContainer />
+                {materials.map((material, i)=>{
+                    if(material.mealkit == post.id){
+                        return(
+                            <CustomContainer key={i} material={material}/>
+                        )
+                    }
+                })}
                 <Space />
             </ListWrap>
         </Wrap>
+        
         </>
     )
 }

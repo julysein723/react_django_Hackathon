@@ -1,5 +1,8 @@
 import style from 'styled-components';
 import food from '../../assets/image/5.png';
+import { useSelector} from 'react-redux';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 
 const Wrap = style.div`
@@ -35,16 +38,21 @@ const MenuSign = style.div`
     font-size: 0.55rem;
     font-weight: 700;
     color: rgba(249, 210, 86, 1);
+    display: ${props => props.signiture ? 'block' : 'none'};
 `;
 
 const MenuDetailComponent = () => {
+    const {post} = useSelector(state => ({
+        post: state.PostChange.post,
+    }));
+
     return(
         <>
             <Wrap>
-                <MenuImg src={food}/>
-                <MenuSign>Signature</MenuSign>
-                <MenuName>오징어 불짬뽕</MenuName>
-                <MenuDetail>맛있게 매운 해물가득 불짬뽕</MenuDetail>
+                <MenuImg src={post.photo}/>
+                <MenuSign signiture={post.signiture}>Signature</MenuSign>
+                <MenuName>{post.name}</MenuName>
+                <MenuDetail>{post.detail}</MenuDetail>
             </Wrap>
         </>
     )

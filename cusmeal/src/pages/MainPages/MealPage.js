@@ -10,7 +10,7 @@ const MealPage = ({history, location}) => {
     useEffect(() => {
         async function get() {
             const axiosPosts = await axios.get('http://127.0.0.1:8000/mealkit/mealkit/');
-            console.log('통신 : ', axiosPosts);
+            //console.log('통신 : ', axiosPosts);
             const posts = axiosPosts.data;
             setPosts(posts);
         };
