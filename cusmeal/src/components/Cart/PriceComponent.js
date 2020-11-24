@@ -31,16 +31,15 @@ const TextWrap = style.div`
 `;
 
 const Text = style.div`
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: rgba(248, 246, 250, 1);
-    margin-top: 1.2vw;
-    margin-right: 2vw;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: rgba(249, 210, 86, 1);
+    margin-left: 2vw;
 `
 
 const TextPrice = style.div`
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 900;
     color: rgba(249, 210, 86, 1);
 `;
 
@@ -50,8 +49,8 @@ const PriceComponent = ({price}) => {
             <Wrap>
                 <Btn>
                     <TextWrap>
-                        <Text>총가격</Text>
                         <TextPrice>{price}원</TextPrice>
+                        <Text>주문하기</Text>
                     </TextWrap>
                 </Btn>
             </Wrap>
