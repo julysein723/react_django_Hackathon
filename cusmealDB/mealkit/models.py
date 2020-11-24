@@ -1,18 +1,8 @@
 from django.db import models
-from uuid import uuid4
-import os
-
-def uuid_name(instance, filename):
-    uuid = uuid4().hex
-    extension = os.path.splitext(filename)[-1].lower()
-    return '/'.join([
-        'mealkit',
-        uuid+extension,
-    ])
 
 class Mealkit(models.Model):
     name = models.CharField('밀키트명',max_length=20)
-    photo = models.ImageField('사진', upload_to=uuid_name)
+    photo = models.ImageField('사진')
     detail = models.CharField('상세설명',max_length=50)
     signiture = models.BooleanField('시그니처')
     price = models.PositiveIntegerField('최소가격')

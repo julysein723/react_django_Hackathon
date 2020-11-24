@@ -1,5 +1,4 @@
 import style from 'styled-components';
-import market from '../../assets/이미지_주소/망원시장.jpg'
 
 const MarketWrap = style.div`
     background-color: #ffffff;
