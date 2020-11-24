@@ -13,11 +13,10 @@ const Wrap = style.div`
 const PostListWrap = style.div`
     position: relative;
     width: 100vw;
-    height: 200vw;
     z-index: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-column: 1fr;
+    align-item: center;
     background-color: rgba(248, 246, 250, 1);
 `;
 
@@ -47,7 +46,10 @@ const PostListComponent = () => {
                     <Space />
                     <PostContainer />
                     <PostContainer />
+                    <PostContainer />
+                    <PostContainer />
                     <BtnAdd>+ 더 담으러 가기</BtnAdd>
+                    <Space />
                 </PostListWrap>
             </Wrap>
         </>
