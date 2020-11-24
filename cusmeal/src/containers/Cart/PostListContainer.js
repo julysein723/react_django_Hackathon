@@ -1,9 +1,13 @@
 import PostListComponent from '../../components/Cart/PostListComponent';
 
-const PostListContainer = () => {
+const PostListContainer = ({history}) => {
+    const onHandleClick = () => {
+        history.push('/main')
+    } 
+    
     return(
         <>
-            <PostListComponent />
+            <PostListComponent onHandleClick={onHandleClick}/>
         </>
     )
 }

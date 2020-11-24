@@ -8,6 +8,7 @@ const Wrap = style.div`
     margin-top: 20vw;
     padding-top: 5vw;
     background-color: rgba(248, 246, 250, 1);
+    display: flex;
 `;
 
 const PostListWrap = style.div`
@@ -18,6 +19,7 @@ const PostListWrap = style.div`
     grid-template-column: 1fr;
     align-item: center;
     background-color: rgba(248, 246, 250, 1);
+    margin-left: 5vw;
 `;
 
 const BtnAdd = style.button`
@@ -38,7 +40,7 @@ const Space = style.div`
     height: 3vw;
 `;
 
-const PostListComponent = () => {
+const PostListComponent = ({onHandleClick}) => {
     return(
         <>
             <Wrap>
@@ -46,9 +48,14 @@ const PostListComponent = () => {
                     <Space />
                     <PostContainer />
                     <PostContainer />
-                    <PostContainer />
-                    <PostContainer />
-                    <BtnAdd>+ 더 담으러 가기</BtnAdd>
+                    <BtnAdd onClick={onHandleClick}>+ 더 담으러 가기</BtnAdd>
+                    <Space />
+                    <Space />
+                    <Space />
+                    <Space />
+                    <Space />
+                    <Space />
+                    <Space />
                     <Space />
                 </PostListWrap>
             </Wrap>

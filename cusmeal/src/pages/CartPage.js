@@ -10,7 +10,7 @@ const CartPage = ({history, location}) => {
     return(
         <div>
             <HeaderContainer />
-            <PostListContainer />
+            <PostListContainer history={history}/>
             <PriceComponent price={price}/>
             {
                 //<UnderBarContainer history={history} location={location} />
