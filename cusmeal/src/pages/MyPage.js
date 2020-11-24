@@ -1,9 +1,10 @@
 import UnderBarContainer from '../containers/Main/UnderBarContainer';
+import HeaderContainer from '../containers/MyPage/HeaderContainer';
 
 const MyPage = ({history, location}) => {
     return(
         <div>
-            mypage입니다.
+            <HeaderContainer />
             <UnderBarContainer history={history} location={location} />
         </div>
     )

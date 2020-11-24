@@ -4,7 +4,7 @@ from . import views
 
 router = DefaultRouter()
 router.register('mealkit', views.MealkitViewSet)
-
+router.register('material', views.MaterialViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
