@@ -39,16 +39,16 @@ const MarketDetail = style.div`
     color: rgba(210, 210, 210, 1);
 `;
 
-const MarketComponent = ({onClick}) => {
+const MarketComponent = ({onClick, market}) => {
     return(
         <>
             <MarketWrap onClick={onClick}>
                 <MarketDetailWrap>
-                    <MarketName>망원시장</MarketName>
+                    <MarketName>{market.name}</MarketName>
                     <MarketDetail>서울특별시 마포구</MarketDetail>
                     <MarketDetail>포은로 6길 27</MarketDetail>
                 </MarketDetailWrap>
-                <MarketImg src={market}/>
+                <MarketImg src={market.photo}/>
             </MarketWrap>
         </>
     )
