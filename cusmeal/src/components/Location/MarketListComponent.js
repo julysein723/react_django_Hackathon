@@ -16,14 +16,20 @@ const Wrap = style.div`
 
 const ListWrap = style.div`
     width: 94vw;
-    height: 150vw;
-    position: fixed;
+    position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
     justify-items: center;
     margin-top: 7vw;
+    background-color: rgba(248, 246, 250, 1);
 `;
+
+const Space = style.div`
+    width: 100vw;  
+    height: 5vw; 
+`;
+
 
 const MarketListComponent = ({history}) => {
     return(
@@ -38,6 +44,7 @@ const MarketListComponent = ({history}) => {
                     <MarketContainer history={history} />
                     <MarketContainer history={history} />
                     <MarketContainer history={history} />
+                    <Space />
                 </ListWrap>
             </Wrap>
         </>

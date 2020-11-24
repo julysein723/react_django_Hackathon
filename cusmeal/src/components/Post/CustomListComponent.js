@@ -43,13 +43,17 @@ const PriceWrap = style.div`
 
 const ListWrap = style.div`
     width: 100vw;
-    height: 150vw;
     position: relative;
     display: grid;
     grid-template-columns: 100%;
     align-items: center;
     justify-items: center;
     margin-top: 5vw;
+`;
+
+const Space = style.div`
+    width: 100vw;  
+    height: 5vw; 
 `;
 
 const CustomListComponent = ({price}) => {
@@ -69,6 +73,7 @@ const CustomListComponent = ({price}) => {
                 <CustomContainer />
                 <CustomContainer />
                 <CustomContainer />
+                <Space />
             </ListWrap>
         </Wrap>
         </>

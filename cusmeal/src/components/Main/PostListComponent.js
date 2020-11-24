@@ -34,27 +34,24 @@ const ImgSliderWrap = style.div`
 
 const PostsWrap = style.div`
     width: 100vw;
-    height: 150vw;
     position: relative;
     display: grid;
     grid-template-columns: 100%;
     align-items: center;
     justify-items: center;
     margin-top: 5vw;
+    background-color: rgba(248, 246, 250, 1);
 `;
 
-const PostList = style.div`
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
 
 const Space = style.div`
     width: 100vw;  
     height: 3vw; 
+`;
+
+const SpaceTwo = style.div`
+    width: 100vw;  
+    height: 15vw; 
 `;
 
 const PostListComponent = ({history}) => {
@@ -72,6 +69,11 @@ const PostListComponent = ({history}) => {
                     <PostContainer history={history} />
                     <PostContainer history={history} />
                     <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <PostContainer history={history} />
+                    <SpaceTwo />
                 </PostsWrap>
             </Wrap>
         </>

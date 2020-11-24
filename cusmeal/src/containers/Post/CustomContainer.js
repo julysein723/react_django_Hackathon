@@ -17,7 +17,9 @@ const CustomContainer = () => {
     }
 
     const onHandleClickPlus= () => {
-        dispatch(clickPlus(value));
+        if(value < 9){
+            dispatch(clickPlus(value));
+        }
     }
 
     return(
