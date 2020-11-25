@@ -1,9 +1,9 @@
 import PostComponent from '../../components/Cart/PostComponent';
 
-const PostContainer = () => {
+const PostContainer = ({post, onDelete, deletePost}) => {
     return(
         <>
-            <PostComponent />
+            <PostComponent post={post} onDelete={onDelete} deletePost={deletePost}/>
         </>
     )
 }

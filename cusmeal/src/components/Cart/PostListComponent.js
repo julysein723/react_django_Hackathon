@@ -40,14 +40,17 @@ const Space = style.div`
     height: 3vw;
 `;
 
-const PostListComponent = ({onHandleClick}) => {
+const PostListComponent = ({onHandleClick, posts, onDelete, deletePost}) => {
     return(
         <>
             <Wrap>
                 <PostListWrap>
                     <Space />
-                    <PostContainer />
-                    <PostContainer />
+                    {posts.map((post, i) => {
+                        return(
+                            <PostContainer post={post} onDelete={onDelete} deletePost={deletePost}/>
+                        )
+                    })}
                     <BtnAdd onClick={onHandleClick}>+ 더 담으러 가기</BtnAdd>
                     <Space />
                     <Space />

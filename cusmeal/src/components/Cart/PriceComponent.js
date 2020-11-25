@@ -43,7 +43,9 @@ const TextPrice = style.div`
     color: rgba(249, 210, 86, 1);
 `;
 
-const PriceComponent = ({price}) => {
+const price=8800;
+
+const PriceComponent = ({posts}) => {
     return(
         <>
             <Wrap>

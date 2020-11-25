@@ -1,5 +1,5 @@
 import style from 'styled-components';
-//import logo from ''
+import logo from '../../assets/icon/logo.png';
 import {useEffect, useState} from 'react';
 
 const Wrap = style.div`
@@ -52,7 +52,9 @@ const Wrap = style.div`
 `;
 
 const LogoWrap = style.div`
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const LogoImg = style.img`
@@ -69,7 +71,7 @@ const LogoText = style.div`
 
 const LoadingComponent = () => {
     const [isFlex, setIsFlex] = useState(true);
-    
+
      useEffect(() => {
          setInterval(() => {
              setIsFlex(false);
@@ -79,9 +81,9 @@ const LoadingComponent = () => {
     
     return( 
         <>
-            <Wrap>
+            <Wrap isFlex={isFlex}>
                 <LogoWrap>
-                    <LogoImg color={'red'} isFlex={isFlex}/>
+                    <LogoImg src={logo}/>
                     <LogoText>커스밀</LogoText>
                 </LogoWrap>
             </Wrap>

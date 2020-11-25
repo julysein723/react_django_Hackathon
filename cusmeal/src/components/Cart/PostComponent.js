@@ -1,4 +1,8 @@
 import style from 'styled-components';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+
 
 const Wrap = style.div`
     width: 90vw;
@@ -61,20 +65,50 @@ const str1 = "오징어 불짬뽕";
 const str2 = "11800원";
 const str3 = "오징어 100g 추가";
 
-const PostComponent  = () => {
+const PostComponent  = ({post, onDelete ,deletePost}) => {
+    //console.log(post.mealkit);
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        async function get() {
+            const axiosPosts = await axios.get('http://127.0.0.1:8000/mealkit/mealkit/');
+            //console.log('통신 : ', axiosPosts);
+            const posts = axiosPosts.data;
+            setPosts(posts);
+        };
+        get();
+    }, [])
+
+    const removePost = async () => {
+        try{
+            await deletePost(post.id);
+            onDelete(post.id);
+        }
+        catch(e){
+
+        }
+    }
+
     return(
         <>
             <Wrap>
                 <WrapTwo>
-                    <Name>{str1}</Name>
+                    {posts.map((data, i)=>{
+                        if(data.id == post.mealkit){
+                            return(
+                                <Name key={i}>{data.name}</Name>
+                            )
+                        }
+                    })}
+                    {/*
                     <DetailList>
                         <Detail>{str3}</Detail>
                         <Detail>{str3}</Detail>
                         <Detail>{str3}</Detail>
                     </DetailList>
-                    <Price>{str2}</Price>
+                    */}
+                    <Price>{post.price}</Price>
                 </WrapTwo>
-                <BtnClose>x</BtnClose>
+                <BtnClose onClick={removePost}>x</BtnClose>
             </Wrap>
         </>
     )
