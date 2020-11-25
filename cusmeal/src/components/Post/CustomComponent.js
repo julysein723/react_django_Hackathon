@@ -1,4 +1,7 @@
 import style from 'styled-components';
+import {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {clickMinus, clickPlus} from '../../modules/CustomBtnClick';
 
 const Wrap = style.div`
     width: 100vw;
@@ -67,7 +70,28 @@ const MenuDetail = style.div`
 
 
 
-const CustomComponent = ({onClickMinus, onClickPlus, value}) => {
+const CustomComponent = ({material}) => {
+    const [value, setValue] = useState(1);
+    const {cost} = useSelector(state => ({
+        cost: state.CustomBtnClick.value,
+    }))
+    const dispath = useDispatch();
+
+    const onClickMinus = () => {
+        if(value > 1){
+            setValue(value-1);
+            const res = cost - material.price;
+            dispath(clickMinus(res));
+        }
+    }
+
+    const onClickPlus = () => {
+        setValue(value+1);
+        console.log(cost);
+        const res = cost + material.price;
+        dispath(clickPlus(res));
+    }
+    
     return(
         <>
             <Wrap>
@@ -77,8 +101,8 @@ const CustomComponent = ({onClickMinus, onClickPlus, value}) => {
                     <Btn onClick={onClickPlus}>+</Btn>
                 </BtnWrap>
                 <MenuWrap>
-                    <MenuName>오징어</MenuName>
-                    <MenuDetail>100g/1000원</MenuDetail>
+                    <MenuName>{material.name}</MenuName>
+                    <MenuDetail>{material.gram}g/{material.price}원</MenuDetail>
                 </MenuWrap>
             </Wrap>
         </>

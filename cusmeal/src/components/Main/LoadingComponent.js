@@ -3,6 +3,8 @@ import style from 'styled-components';
 import {useEffect, useState} from 'react';
 
 const Wrap = style.div`
+    position: absolute;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
     background-color: rgba(48, 119, 86, 1);
@@ -61,7 +63,7 @@ const LogoImg = style.img`
 const LogoText = style.div`
     color: rgba(248, 246, 250, 1);
     font-size: 1.2rem;
-    font-weight: 900;
+    font-weight: 500;
 `;
 
 
@@ -71,7 +73,7 @@ const LoadingComponent = () => {
      useEffect(() => {
          setInterval(() => {
              setIsFlex(false);
-         }, 3000);
+         }, 2000);
      }, [])
 
     
