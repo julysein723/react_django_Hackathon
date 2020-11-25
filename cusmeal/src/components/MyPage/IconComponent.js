@@ -2,7 +2,8 @@ import React from 'react';
 import style from 'styled-components';
 import delivery from '../../assets/icon/delivery.svg';
 import coupon from '../../assets/icon/coupon.svg';
-import conversation from '../../assets/icon/conversation.svg';
+import conversation from '../../assets/icon/Slice 2@2x.png';
+import point from '../../assets/icon/point@2x.png'
 
 const IconContainer = style.div`
     width: 90vw;
@@ -53,9 +54,7 @@ const IconComponent = () => {
                 <Text>쿠폰<Text_> 3</Text_></Text>
             </Item>
             <Item>
-                <Icon>
-
-                </Icon>
+                <Icon src={point}/>
                 <Text>포인트<Text_> 1,279</Text_></Text>
             </Item>
         </IconContainer>

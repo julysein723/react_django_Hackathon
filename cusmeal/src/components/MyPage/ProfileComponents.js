@@ -1,6 +1,6 @@
 import React from 'react';
 import style from 'styled-components';
-import profile from '../../assets/icon/user.svg';
+import profile from '../../assets/icon/profile_icon@2x.png';
 
 const Container = style.div`
     width: 90vw;
@@ -14,7 +14,7 @@ const Container = style.div`
     margin-bottom: 7vw;
     background-color: white;
 `;
-const Photo = style.div`
+const Photo = style.img`
     background-color: rgba(249, 210, 86, 1);
     color : white;
     width: 13vw;
@@ -45,8 +45,7 @@ const ProfileComponent = () => {
     return(
         <>
             <Container>
-                <Photo>
-                </Photo>
+                <Photo src={profile}/>
                 <Text>
                     <Nickname>배고픈 고양이</Nickname>
                     <Email>hungrycat@naver.com</Email>
