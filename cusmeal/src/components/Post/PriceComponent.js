@@ -54,7 +54,7 @@ const PriceComponent = ({price, history}) => {
 
     const createReservation = async (reservation) => {
         try{
-            const {data} = await axios.post('http://127.0.0.1:8000/reservation/reservation/', reservation);
+            const {data} = await axios.post('http://127.0.0.1:8000/reservation/', reservation);
             console.log(data);
             return data.data;
         }

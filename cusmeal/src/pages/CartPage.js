@@ -23,7 +23,7 @@ const CartPage = ({history, location}) => {
 
     const deletePost = async (id) => {
         try{
-            const {data} = await axios.delete(`http://127.0.0.1:8000/reservation/reservation/${id}`);
+            const {data} = await axios.delete(`http://127.0.0.1:8000/reservation/reservation/${id}/`);
             console.log(data);
             return data.data;
         }
