@@ -9,7 +9,7 @@ const Wrap = style.div`
     height: 40vw;
     border-radius: 4vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     box-shadow: 0vw 2vw 5vw 0 rgba(0, 0, 0, 0.2);
     font-family: 'Noto Sans KR';
     margin-bottom: 7vw;
@@ -57,9 +57,13 @@ const BtnClose = style.button`
     background-color: white;
     font-size: 1.5rem;
     color: rgba(187, 187, 187, 1);
-    left: 48%;
-    top: 5%;
+    left: 90%;
 `;
+
+const BtnWrap = style.div`
+    width: 90vw;
+`;
+
 
 const str1 = "오징어 불짬뽕";
 const str2 = "11800원";
@@ -91,6 +95,9 @@ const PostComponent  = ({post, onDelete ,deletePost}) => {
     return(
         <>
             <Wrap>
+                <BtnWrap>
+                    <BtnClose onClick={removePost}>x</BtnClose>
+                </BtnWrap>
                 <WrapTwo>
                     {posts.map((data, i)=>{
                         if(data.id == post.mealkit){
@@ -108,7 +115,6 @@ const PostComponent  = ({post, onDelete ,deletePost}) => {
                     */}
                     <Price>{post.price}</Price>
                 </WrapTwo>
-                <BtnClose onClick={removePost}>x</BtnClose>
             </Wrap>
         </>
     )

@@ -5,6 +5,8 @@ import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import img1 from '../../assets/ad.jpg';
+import img2 from '../../assets/ad2.jpg';
+import img3 from '../../assets/ad3.jpg';
 
 const SwiperWrap = style.div`
     width: 90vw;
@@ -34,8 +36,8 @@ const ImgSliderComponent = () => {
                     autoplay={true}
                 >
                     <SwiperSlide><Img src={img1}/></SwiperSlide>
-                    <SwiperSlide><Img color={'blue'}/></SwiperSlide>
-                    <SwiperSlide><Img color={'green'}/></SwiperSlide>
+                    <SwiperSlide><Img src={img2}/></SwiperSlide>
+                    <SwiperSlide><Img src={img3}/></SwiperSlide>
                 </Swiper>
             </SwiperWrap>
         </>

@@ -1,4 +1,7 @@
 import style from 'styled-components';
+import {useDispatch, useSelector} from 'react-redux';
+import {changePrice} from '../../modules/PriceChange';
+import {useEffect, useState} from 'react';
 
 const Wrap = style.div`
     position: fixed;
@@ -43,15 +46,18 @@ const TextPrice = style.div`
     color: rgba(249, 210, 86, 1);
 `;
 
-const price=8800;
+
 
 const PriceComponent = ({posts}) => {
+    
     return(
         <>
             <Wrap>
                 <Btn>
                     <TextWrap>
-                        <TextPrice>{price}원</TextPrice>
+                        {
+                            //<TextPrice>{price}원</TextPrice>
+                        }    
                         <Text>주문하기</Text>
                     </TextWrap>
                 </Btn>
