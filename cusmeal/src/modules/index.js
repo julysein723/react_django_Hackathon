@@ -5,6 +5,9 @@ import CustomBtnClick from './CustomBtnClick';
 import PostChange from './PostChange';
 import PriceChange from './PriceChange';
 import CommunityMenuSelect from './CommunityMenuSelect';
+import PostsChange from './PostsChange';
+
+
 const rootReducer = combineReducers({
   MiddleMenuSelect,
   UnderBarSelect,
@@ -12,6 +15,7 @@ const rootReducer = combineReducers({
   PostChange,
   PriceChange,
   CommunityMenuSelect,
+  PostsChange,
 });
 
 

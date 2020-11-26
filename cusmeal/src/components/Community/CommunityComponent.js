@@ -1,31 +1,62 @@
 import React from 'react';
 import style from 'styled-components';
+import PostComponent from './PostComponent';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 
 const Wrap = style.div`
-    height: 800px;
+    position: absolute;
+    z-index: -1;
+    margin-top: 40vw;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    background-color: rgba(248, 246, 250, 1);
+`;
+
+const PostListWrap = style.div`
+    position: relative;
+    width: 95vw;
+    display: grid;
+    grid-template-column: 1fr;
     align-items: center;
-    justify-content: center;
+
+    background-color: rgba(248, 246, 250, 1);
 `;
 
-
-const Text = style.div`
-    height: 100px;
-    color: grey;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 7vw;
+const Space = style.div`
+    width: 100vw;
+    height: 5vw;
 `;
-
+const SpaceTwo = style.div`
+    width: 100vw;
+    height: 15vw;
+`;
 
 const CommunityComponent = () => {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        async function get() {
+            const axiosPosts = await axios.get('http://127.0.0.1:8000/post/post/');
+            //console.log('통신 : ', axiosPosts);
+            const posts = axiosPosts.data;
+            setPosts(posts);
+        };
+        get();
+    }, [])
+    
     return(
         <Wrap>
-            <Text>
-                콘테스트를 준비중입니다.<br/>
-                잠시만 기다려주세요.
-            </Text>
+            <PostListWrap>
+                <Space />
+                {posts.map((post, i) => {
+                    return(
+                        <PostComponent key={i} post={post} />
+                    )
+                })}
+                <SpaceTwo />
+            </PostListWrap>
         </Wrap>
     );
 }

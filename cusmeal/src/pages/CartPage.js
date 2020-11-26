@@ -5,18 +5,26 @@ import PostListContainer from '../containers/Cart/PostListContainer';
 import PriceComponent from '../components/Cart/PriceComponent';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getPosts} from '../modules/PostsChange';
 
 
 const price = 11800;
 
 const CartPage = ({history, location}) => {
-    const [posts, setPosts] = useState([]);
+    //const [posts, setPosts] = useState([]);
+    const {posts} = useSelector(state => ({
+        posts: state.PostsChange.posts,
+    }))
+    const dispatch = useDispatch();
+    
     useEffect(() => {
         async function get() {
             const axiosPosts = await axios.get('http://127.0.0.1:8000/reservation/');
             //console.log('통신 : ', axiosPosts);
             const posts = axiosPosts.data;
-            setPosts(posts);
+            //setPosts(posts);
+            dispatch(getPosts(posts))
         };
         get();
     }, [])
@@ -24,7 +32,7 @@ const CartPage = ({history, location}) => {
     const deletePost = async (id) => {
         try{
             const {data} = await axios.delete(`http://127.0.0.1:8000/reservation/reservation/${id}/`);
-            console.log(data);
+            //console.log(data);
             return data.data;
         }
         catch(e){
@@ -33,8 +41,9 @@ const CartPage = ({history, location}) => {
     }
 
     const onDelete = (id) => {
-        posts = posts.filter(post => post.id !== id); 
-        setPosts(posts);
+        const reposts = posts.filter(post => post.id !== id); 
+        //setPosts(reposts);
+        dispatch(getPosts(reposts));
     }
     
     return(

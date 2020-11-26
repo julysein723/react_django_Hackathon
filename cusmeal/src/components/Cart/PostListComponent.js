@@ -4,7 +4,7 @@ import PostContainer from '../../containers/Cart/PostContainer';
 const Wrap = style.div`
     position: absolute;
     width: 100vw;
-    height: 150vw;
+    height: 100vh;
     margin-top: 20vw;
     padding-top: 5vw;
     background-color: rgba(248, 246, 250, 1);

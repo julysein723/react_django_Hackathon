@@ -61,7 +61,7 @@ const SearchBar = style.input`
     padding-left: 11vw;
     width: 79vw;
     height: 8vw;
-    border: 0.05rem solid rgba(248, 246, 250, 1);
+    border: 0.1rem solid rgba(248, 246, 250, 1);
     background-color: rgba(0,0,0,0);
     border-radius: 3.5vw;
     margin-top :4vw;
