@@ -14,44 +14,8 @@ const HeaderWrap = style.div`
     flex-direction: column;
     align-items: center;
 `;
-
-const MarketSelectWrap = style.div`
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
-
-const MarketForm = style.form`
-
-`;
-
-const MarketSelect = style.select`
-    width: auto;
-    border: none;
-    margin-top: 7vw;
-    padding-left: 2rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: rgba(248, 246, 250, 1);
-    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
-    -moz-appearance: none; 
-    appearance: none;
-    background: url(${downward}) no-repeat 1% 50%;
-    background-size: 1.2rem 1.2rem;
-    &::-ms-expand { 
-        display: none; 
-    }
-    outline: none;
-`;
-
-const MarketOption = style.option`
-    font-size: 0.8rem;
-    color: black;
-`;
-
 const SearchBarWrap = style.div`
+
 `;
 
 const SearchBar = style.input`
@@ -64,7 +28,7 @@ const SearchBar = style.input`
     border: 0.05rem solid rgba(248, 246, 250, 1);
     background-color: rgba(0,0,0,0);
     border-radius: 3.5vw;
-    margin-top :4vw;
+    margin-top: 4vw;
     color: rgba(248, 246, 250, 1);
     &::placeholder{
         color:${(props) => ( props.isFocus ? 'rgba(248, 246, 250, 0)' : 'rgba(248, 246, 250, 1)')}; 
@@ -86,6 +50,12 @@ const SearchImg = style.img`
     margin-left: 4vw;
 `;
 
+const Text = style.div`
+    color: rgba(249, 210, 86, 1);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 7vw;
+`;
 
 const HeaderComponent = () => {
     const [isFocus, setIsFocus] = useState(false);
@@ -101,19 +71,11 @@ const HeaderComponent = () => {
     return(
         <>
             <HeaderWrap>
-                <MarketSelectWrap>
-                    <MarketForm>
-                        <MarketSelect>
-                            <MarketOption>망원시장</MarketOption>
-                            <MarketOption>석촌시장</MarketOption>
-                            <MarketOption>가락시장</MarketOption>
-                        </MarketSelect>
-                    </MarketForm>
-                </MarketSelectWrap>
+                <Text>커뮤니티</Text>
                 <SearchBarWrap>
                     <SearchImg src={search}/>
                     <SearchBar 
-                        placeholder="먹고 싶은 밀키트 검색" 
+                        placeholder="찾으시는 레시피가 있으신가요?" 
                         isFocus={isFocus} 
                         onFocus={onHandleFocus}
                         onBlur={onHandleBlur}
