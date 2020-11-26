@@ -1,8 +1,14 @@
-from django.shortcuts import render
-from rest_framework.viewsets import  ModelViewSet
-from .serializers import ReservationSerializer
-from .models import Reservation
+from rest_framework import generics
 
-class ReservationViewSet (ModelViewSet):
+from .models import Reservation
+from .serializers import ReservationSerializer
+
+
+class ReservationList(generics.ListCreateAPIView):
+    queryset = Reservation.objects.all()
+    serializer_class = ReservationSerializer
+
+
+class ReservationDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer

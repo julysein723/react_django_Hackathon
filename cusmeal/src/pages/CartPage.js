@@ -13,7 +13,7 @@ const CartPage = ({history, location}) => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         async function get() {
-            const axiosPosts = await axios.get('http://127.0.0.1:8000/reservation/reservation/');
+            const axiosPosts = await axios.get('http://127.0.0.1:8000/reservation/');
             //console.log('통신 : ', axiosPosts);
             const posts = axiosPosts.data;
             setPosts(posts);
